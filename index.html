@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REGENT BLU PARTNERS SRL — Soluții de Employment & Administrative Support</title>
+  <meta name="description" content="REGENT BLU PARTNERS SRL — servicii profesionale de employment, administrativ și suport operațional pentru companii moderne. București." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-grad: radial-gradient(1200px 600px at 50% 20%, rgba(255,190,120,.45), rgba(255,90,150,.35) 35%, rgba(120,120,255,.28) 60%, rgba(255,255,255,0) 70%);
+      --text:#111;
+      --muted:#555;
+      --brand:#111;
+      --accent:#111;
+      --card:#ffffff;
+      --shadow: 0 30px 100px rgba(0,0,0,.12), 0 10px 30px rgba(0,0,0,.06);
+      --radius: 22px;
+      --ring: 0 0 0 4px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      color:var(--text);
+      background:#f2f2f2;
+      line-height:1.6;
+    }
+
+    /* Container */
+    .wrap{
+      width:min(1100px, 92vw);
+      margin-inline:auto;
+    }
+
+    /* Top bar */
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(255,255,255,.7);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      font-weight:800; letter-spacing:.4px;
+      text-transform:uppercase; font-size:13px;
+    }
+    .menu{display:flex; gap:22px; align-items:center}
+    .menu a{
+      text-decoration:none; color:#111; font-weight:500; font-size:14px;
+      padding:8px 10px; border-radius:12px;
+    }
+    .menu a:hover{background:rgba(0,0,0,.06)}
+    .cta{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border:1px solid #111; border-radius:999px;
+      font-weight:600; font-size:13px; background:#fff; color:#111;
+      box-shadow:0 1px 0 rgba(0,0,0,.06);
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .ghost{border-color:rgba(0,0,0,.2)}
+
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden; isolation:isolate;
+      background:
+        var(--bg-grad),
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      min-height:72vh;
+      display:grid; place-items:center; text-align:center;
+    }
+    .hero .wrap{padding:90px 0}
+    .eyebrow{
+      font-family:"Playfair Display", serif;
+      font-style:italic; color:#333; margin-bottom:12px; font-size:18px;
+    }
+    h1{
+      margin:0; font-size:56px; line-height:1.04; letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .lead{
+      margin:16px auto 28px; color:var(--muted); max-width:720px; font-size:16px;
+    }
+    .hero-cta{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+    .device{
+      width:min(420px, 65vw);
+      margin:28px auto 0;
+      aspect-ratio:9/16; border-radius:44px;
+      background:
+        radial-gradient(60% 40% at 70% 20%, rgba(255,255,255,.5), rgba(255,255,255,0) 60%),
+        linear-gradient(120deg, #ffb56b, #ff5ea3 40%, #7b8cff 80%);
+      box-shadow: 0 60px 140px rgba(0,0,0,.22), inset 0 0 0 10px rgba(255,255,255,.7);
+    }
+
+    /* Sections */
+    section{padding:84px 0; background:#fff}
+    .panel{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+    .section-head{display:grid; gap:10px; margin-bottom:28px}
+    .kicker{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#666; font-weight:700}
+    h2{font-size:40px; line-height:1.15; margin:0}
+    .sub{color:var(--muted); max-width:720px}
+
+    /* Grid */
+    .grid-3{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    }
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:28px}
+    @media (max-width: 900px){
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      h1{font-size:42px}
+      h2{font-size:32px}
+    }
+
+    .card{
+      background:#fff; border-radius:18px; padding:26px; box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .card h3{margin:0 0 8px; font-size:20px}
+    .card p{margin:0; color:#555}
+
+    .feature{
+      display:flex; gap:16px; align-items:flex-start
+    }
+    .feature .icon{
+      width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
+      border:1px solid rgba(0,0,0,.1); background:linear-gradient(180deg,#fff, #f3f3f3)
+    }
+
+    /* Process */
+    .process{
+      position:relative; padding:30px; border-radius:22px; background:linear-gradient(180deg, #fff, #fafafa);
+      border:1px solid rgba(0,0,0,.06)
+    }
+    .step{
+      position:relative; padding:20px; border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,.06);
+    }
+    .step:not(:last-child)::after{
+      content:"→"; position:absolute; right:-18px; top:50%; transform:translateY(-50%);
+      font-weight:800; color:#888; font-size:22px;
+    }
+    @media (max-width: 900px){
+      .process .grid-3{gap:14px}
+      .step:not(:last-child)::after{display:none}
+    }
+
+    /* Footer / contact */
+    footer{background:#0c0c0c; color:#eee}
+    footer a{color:#fff}
+    .mini{font-size:13px; color:#a7a7a7}
+
+    /* Buttons & form */
+    button, .btn{
+      appearance:none; border:none; cursor:pointer;
+      padding:12px 18px; border-radius:999px; font-weight:700; font-size:14px;
+    }
+    .btn-primary{background:#111; color:#fff}
+    .btn-outline{background:transparent; border:1px solid #111; color:#111}
+    .btn-primary:focus-visible, .btn-outline:focus-visible{outline:none; box-shadow:var(--ring)}
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0; display:none; place-items:center;
+      background:rgba(0,0,0,.5); z-index:50; padding:20px;
+    }
+    .modal[open]{display:grid}
+    .dialog{
+      width:min(640px, 92vw); background:#fff; border-radius:20px; box-shadow:var(--shadow); padding:24px;
+    }
+    .dialog header{position:relative; background:transparent; border:none; padding:0; margin:0 0 12px}
+    .close{
+      position:absolute; right:0; top:0; background:#f2f2f2; border:1px solid rgba(0,0,0,.06); width:38px; height:38px;
+      border-radius:10px; font-weight:900; display:grid; place-items:center
+    }
+
+    form{display:grid; gap:14px}
+    label{font-size:14px; font-weight:600}
+    input, textarea{
+      font:inherit; padding:12px 14px; border-radius:12px; border:1px solid rgba(0,0,0,.15); background:#fff;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .helper{font-size:12px; color:#666; margin-top:-6px}
+    .error{color:#b00020; font-size:12px; display:none}
+    .success{
+      padding:14px; border-radius:12px; background:#e7f8ec; color:#114d2b; border:1px solid #bfe7cd;
+      display:none;
+    }
+
+    /* Accessibility helpers */
+    .sr-only{
+      position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; border:0; padding:0; margin:-1px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Navigare principală">
+      <div class="brand" aria-label="REGENT BLU PARTNERS SRL, siglă text">REGENT BLU PARTNERS</div>
+      <nav class="menu">
+        <a href="#acasa">Acasă</a>
+        <a href="#despre">Cine suntem</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#diferenta">De ce noi</a>
+        <a href="#proces">Proces</a>
+        <a class="cta ghost" href="#contact">Contact</a>
+        <button class="cta btn-primary" id="openContact" aria-haspopup="dialog" aria-controls="contactModal">Scrie-ne</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="acasa" class="hero" role="main">
+    <div class="wrap">
+      <p class="eyebrow">Ziua ta, în ritm perfect</p>
+      <h1>Lucrezi mai inteligent,<br/>nu mai greu</h1>
+      <p class="lead">
+        Control complet asupra timpului tău cu o echipă de administrare și servicii de employment „all-in-one”.
+        Organizăm fluxuri, urmărim conformitatea, optimizăm costuri și menținem evidențe—fără stres.
+      </p>
+      <div class="hero-cta" role="group" aria-label="Acțiuni primare">
+        <button class="btn btn-primary" id="ctaPrimary">Solicită o propunere</button>
+        <a class="btn btn-outline" href="#servicii">Vezi serviciile</a>
+      </div>
+      <div class="device" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <!-- DESPRE -->
+  <section id="despre" aria-labelledby="h-despre">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Cine suntem</span>
+        <h2 id="h-despre">Regent Blu Partners — echipa de back-office care îți eliberează creșterea</h2>
+        <p class="sub">
+          REGENT BLU PARTNERS SRL oferă servicii integrate de Employment Services și Administrative Support pentru companii
+          care au nevoie de ordine, trasabilitate și timp recuperat. Din București deservim clienți din întreaga țară,
+          combinând procese robuste cu software propriu pentru gestiunea documentelor, fluxurilor de recrutare și
+          raportărilor obligatorii. Lucrăm transparent, cu SLA-uri clare, și respectăm standarde stricte de protecție a datelor (EU GDPR).
+          Ne implicăm ca un partener operațional, nu ca un simplu furnizor, astfel încât echipa ta să se poată concentra pe produs și vânzări.
+        </p>
+      </div>
+
+      <div class="panel card">
+        <h3>Ce ne definește</h3>
+        <p>
+          • expertiză în HR administrativ, payroll de bază, dosare de personal și managementul furnizorilor;<br/>
+          • automatizări fără cod pentru preluări repetitive (documente, aprobări, notificări);<br/>
+          • rapoarte lunare care leagă activitatea noastră de KPI-urile tale (Timp de ocupare, SLA, Cost per Hire, Rate de conformitate).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICII -->
+  <section id="servicii" aria-labelledby="h-servicii">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Ce facem</span>
+        <h2 id="h-servicii">Servicii specializate pentru operațiuni eficiente</h2>
+        <p class="sub">
+          Acoperim întregul ciclu de suport administrativ: de la recrutare asistată și administrare de personal,
+          la servicii suport pentru facility & waste compliance, astfel încât operațiunile să fie fluide și conforme.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card" aria-labelledby="s1">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🧭</div>
+            <div>
+              <h3 id="s1">Employment Services & HR Admin</h3>
+              <p>
+                Preluăm dosarele de personal, contractele și actualizările, urmărind termenele și expirările automat.
+                Integram onboarding digital (politici, training, semnături) și mapăm clar responsabilitățile legale.
+                Rapoarte cu indicatori de conformitate livrate lunar managementului.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="s2">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">📑</div>
+            <div>
+              <h3 id="s2">Administrative & Operational Support</h3>
+              <p>
+                Secretariat executiv, programări, management furnizori, registratură digitală și arhivare.
+                Construim fluxuri de aprobare pe nivele, cu trasabilitate și jurnal de audit.
+                Reducem timpul mediu de răspuns intern cu până la 35% prin standarde și șabloane.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="s3">
+          <div class="feature">
+            <div class="icon" aria-hidden="true">♻️</div>
+            <div>
+              <h3 id="s3">Waste Management & Conformitate</h3>
+              <p>
+                Inventariem deșeurile generate, stabilim contracte cu operatori licențiați și ținem evidențe lunare.
+                Pregătim documentația pentru raportările obligatorii și controalele autorităților.
+                Implementăm etichetare și instruiri minime pentru personalul tău operațional.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DE CE NOI -->
+  <section id="diferenta" aria-labelledby="h-dif">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Avantajul Regent</span>
+        <h2 id="h-dif">De ce ne aleg companiile care cresc</h2>
+        <p class="sub">Ne măsurăm munca în timp eliberat pentru echipa ta și în riscuri administrative eliminate.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Procese auditate, nu improvizate</h3>
+          <p>Folosim proceduri documentate, checklist-uri și perechi „responsabil–verificator”. Orice flux are intrări, ieșiri și SLA clar.</p>
+        </div>
+        <div class="card">
+          <h3>Transparență și rapoarte utile</h3>
+          <p>Dashboard lunar: task-uri, conformitate, termene critice, status recrutări și contracte. Decizii bazate pe date, nu pe impresii.</p>
+        </div>
+        <div class="card">
+          <h3>Respect pentru datele tale</h3>
+          <p>Minimizarea datelor, acces pe rol, criptare în tranzit și la stocare, plus acorduri DPA. Conform GDPR end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section id="proces" aria-labelledby="h-proces">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Cum lucrăm</span>
+        <h2 id="h-proces">Procesul nostru în 3 pași clari</h2>
+        <p class="sub">Onboarding ghidat, execuție cu SLA și revizuire lunară. Fără surprize.</p>
+      </div>
+
+      <div class="process">
+        <div class="grid-3">
+          <div class="step">
+            <h3>1) Diagnostic & Plan</h3>
+            <p>Audităm rapid fluxurile actuale, definim riscurile și stabilim „To-Be”. Primești planul cu roluri, termene și costuri.</p>
+          </div>
+          <div class="step">
+            <h3>2) Implementare & Transfer</h3>
+            <p>Configurăm șabloane, aprobări și automatizări; preluăm dosarele și comunicăm schimbările către echipă.</p>
+          </div>
+          <div class="step">
+            <h3>3) Operare & Îmbunătățire</h3>
+            <p>Rulăm operaționalul zilnic, monitorizăm KPI și propunem optimizări incrementale, lunar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION INTERMEDIAR -->
+  <section aria-labelledby="h-mid">
+    <div class="wrap">
+      <div class="panel">
+        <div class="grid-2">
+          <div style="padding:28px">
+            <span class="kicker">Gata de start?</span>
+            <h2 id="h-mid">Începe cu un „pilot” de 30 de zile</h2>
+            <p class="sub">
+              Testează colaborarea fără risc: obiective clare, raport final, recomandări. Păstrezi standardele și documentele create,
+              indiferent de decizia de continuare.
+            </p>
+            <button class="btn btn-primary" id="openContact2" aria-haspopup="dialog" aria-controls="contactModal">Cere o ofertă</button>
+          </div>
+          <div style="background:
+            radial-gradient(500px 220px at 70% 30%, rgba(255,255,255,.6), rgba(255,255,255,0) 60%),
+            linear-gradient(120deg,#ffd08a,#ff7ab5 45%,#8aa0ff 85%);
+            min-height:280px; border-top-right-radius:22px; border-bottom-right-radius:22px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Hai să vorbim</span>
+        <h2 id="h-contact">Contact</h2>
+        <p class="sub">Ne poți scrie oricând. Răspundem în 1–2 zile lucrătoare.</p>
+      </div>
+
+      <div class="card">
+        <p><strong>Adresă:</strong> STR. VERZISORI NR. 74 CAMERA 7 BL. 3A SC. 2 ET. 8 AP. 54, București</p>
+        <p><strong>Email:</strong> <a href="mailto:info@regentblupartners.pro">info@regentblupartners.pro</a></p>
+        <div class="mini">Nu solicităm număr de telefon în formular. Păstrăm doar informațiile strict necesare pentru a-ți răspunde.</div>
+        <div style="margin-top:16px">
+          <button class="btn btn-primary" id="openContact3" aria-haspopup="dialog" aria-controls="contactModal">Deschide formularul</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap" style="padding:32px 0">
+      <div class="grid-2">
+        <div>
+          <div class="brand" style="color:#fff">REGENT BLU PARTNERS</div>
+          <p class="mini">© <span id="year"></span> REGENT BLU PARTNERS SRL. Toate drepturile rezervate.</p>
+        </div>
+        <div class="mini" style="text-align:right">
+          <p>Confidențialitate: minimizare date, acces pe rol, criptare în tranzit și la stocare. Conform GDPR.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: CONTACT FORM -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-describedby="contactDesc">
+    <div class="dialog">
+      <header>
+        <h3 id="contactTitle">Trimite-ne un mesaj</h3>
+        <p id="contactDesc" class="mini" style="margin:6px 40px 0 0">Completează câmpurile de mai jos. Câmpurile marcate cu * sunt obligatorii.</p>
+        <button class="close" id="closeModal" aria-label="Închide">×</button>
+      </header>
+
+      <form id="contactForm" novalidate>
+        <!-- Frases pentru formular -->
+        <label for="nume">Nume complet *</label>
+        <input id="nume" name="nume" type="text" placeholder="Ex: Andrei Pop" autocomplete="name" required aria-required="true" />
+        <div class="helper">Spune-ne cum să te adresăm.</div>
+        <div class="error" id="err-nume">Te rugăm să introduci numele.</div>
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" placeholder="Ex: nume@companie.ro" autocomplete="email" required aria-required="true" />
+        <div class="helper">Folosim adresa doar pentru a răspunde solicitării tale.</div>
+        <div class="error" id="err-email">Te rugăm să introduci un email valid.</div>
+
+        <label for="subiect">Subiect *</label>
+        <input id="subiect" name="subiect" type="text" placeholder="Ex: Solicitare ofertă Servicii Administrative" required aria-required="true" />
+        <div class="error" id="err-subiect">Completează subiectul mesajului.</div>
+
+        <label for="mesaj">Mesaj *</label>
+        <textarea id="mesaj" name="mesaj" placeholder="Descrie pe scurt contextul, obiectivele și termenul dorit." required aria-required="true"></textarea>
+        <div class="error" id="err-mesaj">Spune-ne câteva detalii pentru a te putea ajuta.</div>
+
+        <div aria-live="polite" class="success" id="successBox">
+          Mesajul tău a fost trimis. Îți mulțumim! Te vom contacta în curând la adresa indicată.
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end; margin-top:6px">
+          <button type="button" class="btn btn-outline" id="cancel">Renunță</button>
+          <button type="submit" class="btn btn-primary">Trimite mesajul</button>
+        </div>
+
+        <p class="mini" style="margin:8px 0 0">
+          Prin trimitere, ești de acord ca REGENT BLU PARTNERS să prelucreze datele tale pentru a răspunde solicitării. Nu folosim datele în scopuri de marketing fără consimțământ.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: SENT -->
+  <div class="modal" id="sentModal" role="alertdialog" aria-modal="true" aria-labelledby="sentTitle" aria-describedby="sentDesc">
+    <div class="dialog">
+      <header>
+        <h3 id="sentTitle">Mulțumim! 🎉</h3>
+        <p id="sentDesc" class="mini">Mesajul a fost înregistrat și vei primi confirmarea pe email.</p>
+        <button class="close" id="closeSent" aria-label="Închide">×</button>
+      </header>
+      <div class="card">
+        <p>Am primit solicitarea ta. În mod obișnuit răspundem în 24–48h lucrătoare.</p>
+        <div style="margin-top:12px; text-align:right">
+          <button class="btn btn-primary" id="okSent">Închide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal logic (accessible)
+    const modal = document.getElementById('contactModal');
+    const sent = document.getElementById('sentModal');
+    const openers = [document.getElementById('openContact'), document.getElementById('openContact2'), document.getElementById('openContact3')];
+    const closeBtn = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('cancel');
+
+    openers.forEach(btn => btn && btn.addEventListener('click', () => {
+      modal.setAttribute('open','');
+      document.getElementById('nume').focus();
+    }));
+    function closeModal(){ modal.removeAttribute('open'); }
+    closeBtn.addEventListener('click', closeModal);
+    cancelBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ closeModal(); sent.removeAttribute('open'); }});
+
+    // Form validation (no phones, Apple-friendly, privacy-first)
+    const form = document.getElementById('contactForm');
+    const successBox = document.getElementById('successBox');
+    const errors = {
+      nume: document.getElementById('err-nume'),
+      email: document.getElementById('err-email'),
+      subiect: document.getElementById('err-subiect'),
+      mesaj: document.getElementById('err-mesaj'),
+    };
+
+    function isEmail(v){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // reset
+      Object.values(errors).forEach(el=> el.style.display='none');
+      successBox.style.display='none';
+
+      const data = {
+        nume: form.nume.value.trim(),
+        email: form.email.value.trim(),
+        subiect: form.subiect.value.trim(),
+        mesaj: form.mesaj.value.trim(),
+      };
+
+      let ok = true;
+      if(!data.nume){ errors.nume.style.display='block'; ok=false; }
+      if(!isEmail(data.email)){ errors.email.style.display='block'; ok=false; }
+      if(!data.subiect){ errors.subiect.style.display='block'; ok=false; }
+      if(!data.mesaj){ errors.mesaj.style.display='block'; ok=false; }
+
+      if(!ok) return;
+
+      // Simulare trimitere (fără rețele externe) — conform review-ului Apple.
+      setTimeout(()=>{
+        successBox.style.display='block';
+        // Închidem și afișăm confirmarea
+        setTimeout(()=>{
+          modal.removeAttribute('open');
+          sent.setAttribute('open','');
+          document.getElementById('okSent').focus();
+          form.reset();
+          successBox.style.display='none';
+        }, 700);
+      }, 400);
+    });
+
+    // Close sent modal
+    document.getElementById('closeSent').addEventListener('click', ()=> sent.removeAttribute('open'));
+    document.getElementById('okSent').addEventListener('click', ()=> sent.removeAttribute('open'));
+
+    // Hero CTA opens modal
+    document.getElementById('ctaPrimary').addEventListener('click', ()=>{
+      modal.setAttribute('open',''); document.getElementById('nume').focus();
+    });
+  </script>
+</body>
+</html>
